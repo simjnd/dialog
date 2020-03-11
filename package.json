@@ -1,0 +1,26 @@
+{
+	"name": "Dialog",
+	"description": "A chat app for Julien Broisin",
+	"version": "0.0.1",
+	"main": "index.js",
+	"author": "Simon Janda <simon.janda@univ-tlse3.fr> (https://twitter.com/simjnd)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ashleygwilliams/my_package.git"
+	},
+	"keywords": [],
+	"license": "MIT",
+	"bugs": {
+		"url": ""
+	},
+	"homepage": "",
+	"dependencies": {
+		"bcrypt": "^4.0.1",
+		"body-parser": "^1.19.0",
+		"ejs": "^3.0.1",
+		"escape-html": "^1.0.3",
+		"express": "^4.17.1",
+		"express-session": "^1.17.0",
+		"pg-promise": "^10.4.4"
+	}
+}
