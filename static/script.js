@@ -23,6 +23,11 @@ $('.room').on('click', (e) => {
 		fetch()
 })
 
+$('nav').on('touch', (e) => {
+	$('#rooms').css('display', 'flex')
+	setTimeout(() => $('#rooms').css('display', 'none'), 3000)
+})
+
 
 // FUNCTIONS
 
