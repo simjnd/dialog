@@ -21,7 +21,8 @@
 	</header>
 	<form action="/api/login" method="post">
 		<label>Email</label>
-		<input type="text" name="email" placeholder="Your email..." autofocus>
+		<input class="error" type="text" name="email" placeholder="Your email..." autofocus>
+		<p class="error-desc">This email is already taken...</p>
 		<label>Password</label>
 		<input type="password" name="password" placeholder="Your password...">
 		<input type="submit" value="Log In">

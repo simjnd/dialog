@@ -79,6 +79,7 @@ a:hover {
 }
 
 #messages {
+	transition: all ease .2;
 	margin: 16px 32px 0;
 }
 
@@ -174,6 +175,18 @@ button:active {
 	/* box-shadow: 0 8px 16px rgba(0, 0, 0, .1); */
 	font-weight: 500;
 	color: rgba(0, 0, 0, .2);
+	animation: .15s linear 0 1 running roompicker;
+}
+
+@keyframes roompicker {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
 
 nav:hover #rooms {
@@ -231,6 +244,18 @@ input {
 input:focus {
 	outline: none;
 	background-color: rgba(0, 0, 0, .1);
+}
+
+.error {
+	border: 1.5px solid rgba(200, 50, 50, 1);
+	color: rgba(200, 50, 50, 1);
+}
+
+.error-desc {
+	color: rgba(200, 50, 50, 1);
+	font-weight: 500;
+	font-size: .75rem;
+	margin-top: 4px;
 }
 
 label {
