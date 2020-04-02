@@ -1,6 +1,6 @@
 
-const { app, auth, html } = require('./setup.js')
-const db = require('./database.js')
+const { app, auth, html } = require('./setup')
+const db = require('./database')
 
 app
 .get('/', async (req, res) => {
@@ -9,6 +9,7 @@ app
 })
 
 .get('/login', (req, res) => {
+	console.log(req.errors)
 	if (req.user) {
 		res.redirect('/')
 	} else {

@@ -19,11 +19,7 @@ const setup = () => {
 	}))
 	.use(auth.authentify)
 
-	return {
-		app: app,
-		auth: auth,
-		html: html
-	}
+	return { app, auth, html }
 
 }
 

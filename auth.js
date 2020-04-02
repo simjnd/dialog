@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 
 const auth = {
 
-	open: ['/login', '/signup', '/api/login', '/api/signup'],
+	public: ['/login', '/signup', '/api/login', '/api/signup'],
 
 	login: (req, res) => {
 		if (req.body.email.trim() == '' || req.body.password == '') {
@@ -18,12 +18,12 @@ const auth = {
 						req.session.user = { id: data.id, name: data.name, email: data.email }
 						res.redirect('/')
 					} else {
+						req.session.errors = { password: 'wrong password' }
 						res.redirect('/login')
-						console.log('failed to sign in')
 					}
 					})
 				} else {
-					req.error.exist = 'test'
+					req.session.errors = { password: 'other error' }
 					res.redirect('/login')
 				}
 				
@@ -42,7 +42,7 @@ const auth = {
 	},
 
 	authentify: (req, res, next) => {
-		if (!auth.open.includes(req.path) && !req.session.user) {
+		if (!auth.public.includes(req.path) && !req.session.user) {
 			res.redirect('/login')
 		} else {
 			req.user = req.session.user
@@ -61,6 +61,10 @@ const auth = {
 				res.redirect('/')
 			})
 		}
+	},
+
+	checkLoginInput: (req, res) => {
+		if (req.body.username.trim())
 	}
 
 }
